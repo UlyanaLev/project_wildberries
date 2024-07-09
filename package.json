@@ -1,0 +1,19 @@
+{
+  "name": "project_wildberries",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel --no-cache --open",
+    "build": "parcel build --no-cache"
+  },
+  "author": "Levchuk Ulyana",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.12.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
+    "parcel": "^2.12.0"
+  }
+}
