@@ -1,6 +1,9 @@
 @import "./_cdn.scss";
 @import "./_mixins.scss";
 @import "./_variables.scss";
+@import "./header.scss";
+@import "./swiper.scss";
+@import "./wrapper.scss";
 
 * {
     margin: 0;
@@ -11,7 +14,7 @@
 }
 .container {
     max-width: 1210px;
-    padding: 0 15px;
+    padding: 0 20px;
     margin: auto;
     position: relative;
 }

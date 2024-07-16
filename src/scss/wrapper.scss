@@ -1,0 +1,89 @@
+.wrapper {
+    .container {
+        padding-bottom: 30px;
+    }
+}
+.wrapper_title {
+    margin: 0 0 30px 60px;
+    font-family: $_font-family_text;
+    font-size: $_font-size_text_big;
+    font-weight: $_font-weight_bold;
+    color: $_button_normal;
+}
+.wrapper_products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.wrapper_product {
+    display: flex;
+    flex-direction: column;
+    width: 180px; 
+    margin: 0 5px 25px 5px; 
+}
+.wrapper_product_img {
+    margin-bottom: 15px;
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+}
+.wrapper_product_info {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    margin-bottom: 15px;
+    h3 {
+        font-family: $_font-family_text;
+        font-size: $_font-size_text_middle;
+        font-weight: $_font-weight_medium;
+        color: $_color_text_dark;
+        margin-bottom: 5px;
+    }
+}
+.wrapper_product_prices {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .wrapper_product_price-new {
+        font-family: $_font-family_text;
+        font-size: $_font-size_text_big;
+        font-weight: $_font-weight_black;
+        color: $_button_normal;
+        margin: 3px 6px 3px 3px;
+    }
+    .wrapper_product_price-old {
+        font-family: $_font-family_text;
+        font-size: $_font-size_text_middle;
+        font-weight: $_font-weight_normal_regular;
+        color: $_color_text_middle;
+        margin: 3px;
+        text-decoration: line-through;
+    }
+}
+.button {
+    display: block;
+    width: 100%;
+    background-color: $_button_normal;
+    color:$_color_text_light;
+    font-family: $_font-family_text;
+    font-size: $_font-size_text_min;
+    font-weight: $_font-weight_medium;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: $_transition_normal;
+    &:hover {
+        background-color: $_button_hover;
+    }
+    &:active {
+        background-color: $_button_active;
+    }
+    .fa-solid {
+        font-size: $_font-size_text_min;
+        margin: 0 8px 0 0;
+    }
+}
