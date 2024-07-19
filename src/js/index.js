@@ -3,7 +3,8 @@
 const root = document.querySelector("#root");
 console.log(root);
 
-// Создание элементов
+
+//Создание элементов
 function createNewElement(type, style, href, src, text, inputType, placeholder, rootDiv) {
     const element = document.createElement(type);
     if (style !== null) {
@@ -22,7 +23,7 @@ function createNewElement(type, style, href, src, text, inputType, placeholder, 
     if (src!== null) {
         element.src = src;
     }
-    if (text !== null) {
+    if (text!== null) {
         element.textContent = text;
     }
     if (type === "input") {
@@ -45,8 +46,11 @@ function newElements() {
     const logoHeader = createNewElement("div", "logo", null, null, null, null, null, wrapHeader);
     const aLogoHeader = createNewElement("a", "a_logo", "#", null, "Wildberries", null, null, logoHeader);
     const burgerHeader = createNewElement("div", "burger", null, null, null, null, null, wrapHeader);
-    const spanBurgerHeader = createNewElement("span", null, null, null, null, null,null, burgerHeader);
+    const span1BurgerHeader = createNewElement("span", null, null, null, null, null,null, burgerHeader);
+    const span2BurgerHeader = createNewElement("span", null, null, null, null, null,null, burgerHeader);
+    const span3BurgerHeader = createNewElement("span", null, null, null, null, null,null, burgerHeader);
     const inputHeader = createNewElement("div", "input", null, null, null, null, null, wrapHeader);
+
     const inputSearchHeader = createNewElement("input", "header_search-catalog", null, null, null, "text", "Найти на Wildberries", inputHeader);
     const iconHeader = createNewElement("div", "header_icon", null, null, null, null, null, wrapHeader);
     const aIconHeaderLocation = createNewElement("a", "a_location", "#", null, null, null, null, iconHeader);
@@ -60,9 +64,10 @@ function newElements() {
     const spanBasketHeader = createNewElement("span", "header_icon_text", null, null, "Корзина", null, null, aIconHeaderBasket);
     
     //swiper
+
     const swiper = createNewElement("div", "swiper", null, null, null, null, null, root);
     const containerSwiper = createNewElement("div", "container", null, null, null, null, null, swiper);
-    const sliderSwiper = createNewElement("div", "slider", null, null, null, null, null, swiper);
+    const sliderSwiper = createNewElement("div", "slider", null, null, null, null, null, containerSwiper);
     const slide1Swiper = createNewElement("div", "slide", null, null, null, null, null, sliderSwiper);
     const a1SlideSwiper = createNewElement("a", null, "#", null, null, null, null, slide1Swiper);
     const img1SlideSwiper = createNewElement("img", "slade_img", null, "https://static-basket-01.wbbasket.ru/vol1/crm-bnrs/bners1/zhar_2880_1207.webp", null, null, null, a1SlideSwiper);
@@ -95,6 +100,13 @@ function newElements() {
     const newPriceProductWrapper = createNewElement("span","wrapper_product_price-new", null, null, "80$", null, null, pricesProductWrapper);
     const oldPriceProductWrapper = createNewElement("span", "wrapper_product_price-old", null, null, "100$", null, null, pricesProductWrapper);
     const h3ProductWrapper = createNewElement("h3", "wrapper_product_title", null, null, "Product 1", null, null, infoProductWrapper);
-    const buttonProductWrapper = createNewElement("button", "button", null, null, " в корзину", null, null, productWrapper);
+    const buttonProductWrapper = createNewElement("button", "button", null, null, "в корзину", null, null, productWrapper);
+
 }
 newElements();
+
+
+
+
+
+
