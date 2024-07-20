@@ -14,25 +14,21 @@ function nextSlide() {
     currentSlide = (currentSlide + 1) % totalSlides;
     slides[currentSlide].classList.remove('next');
     slides[currentSlide].classList.add('active');
-    setTimeout(() => {
-        slides[currentSlide].classList.remove('prev');
-        slides[(currentSlide - 1 + totalSlides) % totalSlides].classList.add('next');
-    }, 500);
+    slides[(currentSlide - 2 + totalSlides) % totalSlides].classList.remove('prev');
+    slides[(currentSlide + 1) % totalSlides].classList.add('next');
 }
-
-function prevSlide () {
+function prevSlide() {
     slides[currentSlide].classList.remove('active');
     slides[currentSlide].classList.add('next');
     currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
     slides[currentSlide].classList.remove('prev');
     slides[currentSlide].classList.add('active');
-    setTimeout(() => {
-        slides[currentSlide].classList.remove('next');
-        slides[(currentSlide + 1) % totalSlides].classList.add('prev');
-    }, 500);
+    slides[(currentSlide - 1 + totalSlides) % totalSlides].classList.add('prev');
+    slides[(currentSlide + 2) % totalSlides].classList.remove('next');
 }
 setInterval(nextSlide, 3000)
 
+// Пагинация
 
 const pagination = document.querySelector('.paginator');
 
@@ -40,9 +36,16 @@ for (let i = 0; i < totalSlides; i++) {
     const dot = document.createElement('button');
     dot.classList.add('dot');
     dot.addEventListener('click', () => {
-        slides[currentSlide].style.display = 'none';
-        currentSlide = i;
-        slides[currentSlide].style.display = 'block';
+        if (i > currentSlide) {
+            while (currentSlide !== i) {
+                nextSlide();
+            }
+        } else if (i < currentSlide) {
+            while (currentSlide !== i) {
+                prevSlide();
+            }
+        }
+        updatePagination();
     });
     pagination.append(dot);
 }
@@ -67,16 +70,8 @@ updatePagination();
 const prevButton = document.querySelector('.slider_left');
 const nextButton = document.querySelector('.slider_right');
 
-// prevButton.disabled = currentSlide === 0;
-
-// nextButton.disabled = currentSlide === totalSlides - 1;
-
 prevButton.addEventListener('click', () => {
-    // prevButton.disabled = currentSlide === 0;
-    // nextButton.disabled = currentSlide === totalSlides - 1;
-    slides[currentSlide].style.display = 'none';
-    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-    slides[currentSlide].style.display = 'block';
+    prevSlide();
     updatePagination();
 });
 

@@ -1,8 +1,7 @@
 .swiper {
     background: $_background-color_light;
     .container {
-        max-width: 1250px;
-        padding: 100px 0 20px 0;
+        padding: 120px 0 20px 0;
     }
 }
 .slider{
@@ -13,7 +12,6 @@
     justify-content: center;
     flex-direction: row;
     height: 170px;
-    margin-bottom: 20px;
 }
 .slide {
     display: flex;
@@ -57,7 +55,6 @@
     display: flex;
     justify-content: space-between;
     max-width: 1210px;
-    padding: 0 30px;
     margin: 0 auto;
     position: absolute;
     top:50%;
