@@ -1,17 +1,33 @@
 .swiper {
     background: $_background-color_light;
     .container {
-        padding: 120px 0 20px 0;
+        padding: 120px  20px 20px 20px;
     }
 }
-.slider{
-    position: relative;
-    overflow: hidden;
+.slider {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    position: relative;
+    overflow: hidden;
     height: 170px;
+    border-radius: 15px;
+    cursor: pointer;
+    &:after {
+        @include slider_mask;
+    }
+    &:hover {
+        &:after {
+            background: rgba(0, 0, 0, 0.55);
+        }
+        .slider_left {
+            opacity: 1;
+        }
+        .slider_right {
+            opacity: 1;
+        }
+    }
 }
 .slide {
     display: flex;
@@ -40,35 +56,21 @@
         z-index: 1;
     }
     &.prev {
-        // opacity: 1;
         transform: translateX(-100%);
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
     &.next {
-        // opacity: 1;
         transform: translateX(100%);
         transition: opacity 0.5s ease, transform 0.5s ease;
     }
 }
-
-.buttons_swiper {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1210px;
-    margin: 0 auto;
-    position: absolute;
-    top:50%;
-    left: 25px;
-    right: 25px;
-    z-index: 100;
-}
 .slider_left {
-    padding: 5px 10px;
-    border-radius: 50%;
+    @include slider_button;
+    left: 25px;
 }
 .slider_right {
-    padding: 5px 10px;
-    border-radius: 50%;
+    @include slider_button;
+    right: 25px;
 }
 .paginator {
     display: flex;
@@ -85,10 +87,15 @@
 .dot {
     width: 10px;
     height: 10px;
-    background: #fff;
+    background: rgb(255, 255, 255, 0.5);
+    border: none;
     border-radius: 50%;
     margin: 0 8px;
+    transition: $_transition_normal;
     cursor: pointer;
+    &.active {
+        background: white;
+    }
 }
 
 

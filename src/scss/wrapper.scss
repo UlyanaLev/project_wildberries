@@ -19,6 +19,10 @@
     margin: 0 5px 25px 5px; 
 }
 .wrapper_product_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
     margin-bottom: 15px;
     & img {
         width: 100%;
@@ -35,12 +39,16 @@
     h3 {
         @include h3_wrapper_product_info;
         margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden; 
+        text-overflow: ellipsis;
     }
 }
 .wrapper_product_prices {
     display: flex;
     justify-content: start;
     align-items: center;
+
     .wrapper_product_price-new {
         @include wrapper_product_price-new;
         margin: 3px 6px 3px 3px;
@@ -52,6 +60,8 @@
 }
 .button {
     display: block;
+    text-align: center;
+    justify-self: end;
     width: 100%;
     @include wrapper_button;
     padding: 10px 20px;
