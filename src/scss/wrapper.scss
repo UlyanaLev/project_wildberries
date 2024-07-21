@@ -4,11 +4,8 @@
     }
 }
 .wrapper_title {
-    margin: 0 0 30px 60px;
-    font-family: $_font-family_text;
-    font-size: $_font-size_text_big;
-    font-weight: $_font-weight_bold;
-    color: $_button_normal;
+    margin: 0 0 20px 60px;
+    @include wrapper_title;
 }
 .wrapper_products {
     display: flex;
@@ -22,6 +19,10 @@
     margin: 0 5px 25px 5px; 
 }
 .wrapper_product_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
     margin-bottom: 15px;
     & img {
         width: 100%;
@@ -36,46 +37,37 @@
     width: 180px;
     margin-bottom: 15px;
     h3 {
-        font-family: $_font-family_text;
-        font-size: $_font-size_text_middle;
-        font-weight: $_font-weight_medium;
-        color: $_color_text_dark;
+        @include h3_wrapper_product_info;
         margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden; 
+        text-overflow: ellipsis;
     }
 }
 .wrapper_product_prices {
     display: flex;
     justify-content: start;
     align-items: center;
+
     .wrapper_product_price-new {
-        font-family: $_font-family_text;
-        font-size: $_font-size_text_big;
-        font-weight: $_font-weight_black;
-        color: $_button_normal;
+        @include wrapper_product_price-new;
         margin: 3px 6px 3px 3px;
     }
     .wrapper_product_price-old {
-        font-family: $_font-family_text;
-        font-size: $_font-size_text_middle;
-        font-weight: $_font-weight_normal_regular;
-        color: $_color_text_middle;
+        @include wrapper_product_price-old;
         margin: 3px;
-        text-decoration: line-through;
     }
 }
 .button {
     display: block;
+    text-align: center;
+    justify-self: end;
     width: 100%;
-    background-color: $_button_normal;
-    color:$_color_text_light;
-    font-family: $_font-family_text;
-    font-size: $_font-size_text_min;
-    font-weight: $_font-weight_medium;
+    @include wrapper_button;
     padding: 10px 20px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    transition: $_transition_normal;
     &:hover {
         background-color: $_button_hover;
     }

@@ -1,0 +1,61 @@
+@media all and (max-width: 1200px) {
+    .container {
+      max-width: 1024px; //1024px
+    }
+    .navigation {
+        width: 566px; //566px
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 992px) {
+    html {
+      font-size: 12px;
+    }
+    .container {
+      max-width: 750px; //750px
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 767px) {
+    html {
+      font-size: 10px; //10px
+    }
+    .container {
+      width: 100%;
+      padding: 0 20px; //20px
+    }
+}
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 566px) {
+    .logo {
+        height: 15px; //15px
+    }
+    .our_team-wrap {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 280px)); //280px 280px
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+    .download_button {
+        a {
+            font-size: 18px; //18px
+            padding: 0 60px; //30px 60px
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@media (max-width: 320px) {
+    .banner {
+        padding: 106px 0 52px; //106px 52px
+    }
+    .navigation-list {
+        li {
+            width: 112px; //112px
+            a {
+                font-size: 12px; //12px
+            }
+        }
+    }
+}
