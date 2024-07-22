@@ -4,12 +4,29 @@
     font-size: $_font-size_text_biggest;
     font-family: $_font-family_text;
     font-weight: $_font-weight_medium;
-    transition: $_transition_normal;
     text-transform: uppercase;
 }
-
+@mixin buttons_minus_plus {
+    display: block;
+    border-radius: 15px;
+    @include wrapper_button;
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: $_button_hover;
+    }
+    &:active {
+        background-color: $_button_active;
+    }
+}
+@mixin minus_plus {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 0 5px;
+}
 //swiper
-
 @mixin slider_mask {
     content: '';
         position: absolute;
@@ -22,7 +39,6 @@
         border-radius: 15px;
         transition: $_transition_normal;
 }
-
 @mixin slider_button {
     position: absolute;
     align-content: center;
@@ -38,7 +54,6 @@
     cursor: pointer;
     transition: $_transition_normal;
 }
-
 //wrapper
 @mixin wrapper_title {
     color: $_button_normal;
@@ -72,4 +87,6 @@
     font-family: $_font-family_text;
     font-weight: $_font-weight_medium;
     transition: $_transition_normal;
+    cursor: pointer;
+    border: none;
 }

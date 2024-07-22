@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     width: 180px; 
-    margin: 0 5px 25px 5px; 
+    margin: 0 5px 35px 5px; 
 }
 .wrapper_product_img {
     display: flex;
@@ -24,31 +24,54 @@
     align-items: center;
     height: 200px;
     margin-bottom: 15px;
+    position: relative;
     & img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 15px;
+        transition: 0.4s;
     }
+}
+.wrapper_discount {
+    position: absolute;
+    padding: 5px;
+    bottom: 5%;
+    left: 8%;
+    border-radius: 90%;
+    background-color: rgba(255, 0, 0, 0.65);
+    color: white;
+    font-weight: bold;
 }
 .wrapper_product_info {
     display: flex;
     flex-direction: column;
     width: 180px;
-    margin-bottom: 15px;
-    h3 {
-        @include h3_wrapper_product_info;
-        margin-bottom: 5px;
+    margin-bottom: 10px;
+    a {
         white-space: nowrap;
         overflow: hidden; 
         text-overflow: ellipsis;
+        h3 {
+            @include h3_wrapper_product_info;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden; 
+            text-overflow: ellipsis;
+        }
+        span {
+            display: inline-block;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     }
 }
 .wrapper_product_prices {
     display: flex;
     justify-content: start;
     align-items: center;
-
     .wrapper_product_price-new {
         @include wrapper_product_price-new;
         margin: 3px 6px 3px 3px;
@@ -58,6 +81,18 @@
         margin: 3px;
     }
 }
+.quantity_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px 10px 15px;
+}
+.buttons_minus_plus {
+    @include buttons_minus_plus;
+}
+.minus_plus {
+    @include minus_plus;
+}
 .button {
     display: block;
     text-align: center;
@@ -65,7 +100,6 @@
     width: 100%;
     @include wrapper_button;
     padding: 10px 20px;
-    border: none;
     border-radius: 15px;
     cursor: pointer;
     &:hover {
