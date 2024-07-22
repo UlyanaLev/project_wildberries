@@ -50,3 +50,27 @@ export function createSwiper(root) {
     const buttonRightSliderSwiper = createNewElement("button", "slider_right", null, null, "→", null, null, sliderSwiper);
     const paginatorSliderSwiper = createNewElement("div", "paginator", null, null, " ", null, null, sliderSwiper);
 }
+
+export function changeCart(id, count) {
+    let cart = JSON.parse(localStorage.getItem('cart'));
+    if (cart === null) {
+        cart = {};
+    }
+    if (count === 0) {
+        delete cart[id]
+    }
+    else {
+        cart[id] = count;
+    }
+    localStorage.setItem('cart', JSON.stringify(cart))
+    console.log(cart)
+}
+
+export function getCart() {
+    if (localStorage.getItem('cart') !== null) {
+        return JSON.parse(localStorage.getItem('cart'));
+    }
+    else {
+        return {};
+    }
+}

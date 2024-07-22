@@ -4,7 +4,6 @@
     font-size: $_font-size_text_biggest;
     font-family: $_font-family_text;
     font-weight: $_font-weight_medium;
-    transition: $_transition_normal;
     text-transform: uppercase;
 }
 
@@ -72,5 +71,6 @@
     font-family: $_font-family_text;
     font-weight: $_font-weight_medium;
     transition: $_transition_normal;
+    cursor: pointer;
     border: none;
 }
