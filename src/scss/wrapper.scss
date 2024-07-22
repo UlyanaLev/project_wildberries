@@ -25,7 +25,6 @@
     height: 200px;
     margin-bottom: 15px;
     position: relative;
-    
     & img {
         width: 100%;
         height: 100%;
@@ -89,23 +88,10 @@
     margin: 0 15px 10px 15px;
 }
 .buttons_minus_plus {
-    display: block;
-    border-radius:15px;
-    @include wrapper_button;
-    padding: 5px 15px;
-    margin: 0 5px;
-    cursor: pointer;
-    &:hover {
-        background-color: $_button_hover;
-    }
-    &:active {
-        background-color: $_button_active;
-    }
+    @include buttons_minus_plus;
 }
 .minus_plus {
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0 5px;
+    @include minus_plus;
 }
 .button {
     display: block;
